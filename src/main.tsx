@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client';
 
 import './stylex.css';
 
-import App from './app/App';
+import App from './app/app';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
