@@ -26,7 +26,7 @@ const styles = stylex.create({
 const colorVariants = stylex.create({
   primary: {
     backgroundColor: {
-      default: 'blue',
+      default: '#6750A4',
       ':hover': 'darkblue',
     },
     color: 'white',
@@ -45,7 +45,7 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   icon?: React.ReactNode;
   isLoading?: boolean;
   ref?: React.Ref<HTMLButtonElement>;
-  style?: StyleXStyles[];
+  style?: StyleXStyles & StyleXStyles[] & string;
 };
 
 const Button = ({
