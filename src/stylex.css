@@ -9,3 +9,7 @@ body {
 button {
   font-family: inherit;
 }
+
+.lucide {
+  vertical-align: middle;
+}
