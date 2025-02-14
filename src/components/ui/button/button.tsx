@@ -7,6 +7,7 @@ const styles = stylex.create({
   root: {
     // 丸み
     borderRadius: 20,
+    // 境界の幅
     borderWidth: 0,
     // フォントサイズ(default 16px)
     fontSize: '1rem',
