@@ -5,10 +5,15 @@ import { type StyleXStyles } from '@stylexjs/stylex';
 
 const styles = stylex.create({
   root: {
-    borderRadius: '40px',
-    fontSize: 14,
+    // 丸み
+    borderRadius: 20,
+    borderWidth: 0,
+    // フォントサイズ(default 16px)
+    fontSize: '1rem',
+    // 高さ
     height: 40,
-    padding: '6px 16px',
+    // ボタン内の余白
+    padding: '0px 24px',
   },
 });
 

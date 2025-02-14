@@ -1,2 +1,11 @@
 /* stylex.css */
 @stylex stylesheet;
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+button {
+  font-family: inherit;
+}
