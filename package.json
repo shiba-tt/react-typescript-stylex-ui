@@ -59,16 +59,16 @@
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.0.5"
   },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
+  },
   "lint-staged": {
     "*.{ts,tsx}": "eslint --fix",
     "*": "prettier --write --ignore-unknown"
   },
   "volta": {
     "node": "22.14.0"
-  },
-  "eslintConfig": {
-    "extends": [
-      "plugin:storybook/recommended"
-    ]
   }
 }
