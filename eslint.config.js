@@ -1,5 +1,6 @@
 import eslint from '@eslint/js';
 import vitestPlugin from '@vitest/eslint-plugin';
+import prettierConfig from 'eslint-config-prettier';
 import importPlugin from 'eslint-plugin-import';
 import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
@@ -135,5 +136,6 @@ export default tseslint.config(
       // it ではなく test に統一します。
       'vitest/consistent-test-it': ['error', { fn: 'test' }],
     },
-  }
+  },
+  prettierConfig,
 );
