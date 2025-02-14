@@ -4,16 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "build-storybook": "storybook build",
     "build": "tsc -b && vite build",
+    "dev": "vite",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "test": "vitest run --coverage",
-    "update-snapshots": "vitest run --update",
-    "prettier": "prettier . --write",
     "prepare": "husky",
+    "prettier": "prettier . --write",
+    "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "test": "vitest run --coverage",
+    "update-snapshots": "vitest run --update"
   },
   "dependencies": {
     "lucide-react": "^0.475.0",
