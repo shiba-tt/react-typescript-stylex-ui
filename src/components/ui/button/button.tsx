@@ -4,9 +4,11 @@ import * as stylex from '@stylexjs/stylex';
 import { type StyleXStyles } from '@stylexjs/stylex';
 
 const styles = stylex.create({
-  base: {
-    appearance: 'none',
-    borderWidth: 0,
+  root: {
+    borderRadius: '40px',
+    fontSize: 14,
+    height: 40,
+    padding: '6px 16px',
   },
 });
 
@@ -27,30 +29,11 @@ const colorVariants = stylex.create({
   },
 });
 
-const sizeVariants = stylex.create({
-  small: {
-    fontSize: '1rem',
-    paddingBlock: 4,
-    paddingInline: 8,
-  },
-  medium: {
-    fontSize: '1.2rem',
-    paddingBlock: 8,
-    paddingInline: 16,
-  },
-  large: {
-    fontSize: '1.4rem',
-    paddingBlock: 12,
-    paddingInline: 24,
-  },
-});
-
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   color?: keyof typeof colorVariants;
   icon?: React.ReactNode;
   isLoading?: boolean;
   ref?: React.Ref<HTMLButtonElement>;
-  size?: keyof typeof sizeVariants;
   style?: StyleXStyles[];
 };
 
@@ -59,19 +42,13 @@ const Button = ({
   color = 'primary',
   icon,
   isLoading,
-  size = 'small',
   style,
   ...props
 }: ButtonProps) => {
   return (
     <button
       {...props}
-      {...stylex.props(
-        styles.base,
-        colorVariants[color],
-        sizeVariants[size],
-        style,
-      )}
+      {...stylex.props(styles.root, colorVariants[color], style)}
     >
       {!isLoading && icon && <span>{icon}</span>}
       <span>{children}</span>
