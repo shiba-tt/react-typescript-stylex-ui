@@ -1,4 +1,5 @@
 import eslint from '@eslint/js';
+import stylexPlugin from '@stylexjs/eslint-plugin';
 import vitestPlugin from '@vitest/eslint-plugin';
 import prettierConfig from 'eslint-config-prettier';
 import importPlugin from 'eslint-plugin-import';
@@ -135,6 +136,18 @@ export default tseslint.config(
       ...vitestPlugin.configs.recommended.rules,
       // it ではなく test に統一します。
       'vitest/consistent-test-it': ['error', { fn: 'test' }],
+    },
+  },
+  {
+    // https://stylexjs.com/docs/api/configuration/eslint-plugin/
+    // https://www.npmjs.com/package/@stylexjs/eslint-plugin
+    name: 'stylex eslint setting',
+    plugins: {
+      '@stylexjs': stylexPlugin,
+    },
+    rules: {
+      '@stylexjs/valid-styles': 'error',
+      '@stylexjs/sort-keys': 'warn',
     },
   },
   prettierConfig,
