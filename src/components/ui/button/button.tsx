@@ -48,7 +48,7 @@ const variantsDisabled = stylex.create({
   contained: {
     background: buttonStyles.disabledBackground,
     backgroundColor: null,
-    color: colors.disabled,
+    color: buttonStyles.disabled,
   },
 });
 
