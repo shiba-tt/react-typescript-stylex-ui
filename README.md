@@ -6,7 +6,7 @@
 
 React、TypeScript、StyleXを使用してUIを作成\
 ビルドツール:Vite\
-ユニットテストフレームワーク:Vitest\
+ユニットテストフレームワーク:Vitest
 
 ## 前提条件
 
