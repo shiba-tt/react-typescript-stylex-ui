@@ -13,13 +13,21 @@ const App = () => {
   return (
     <div {...stylex.props(styles.root)}>
       <Button icon={<Upload />}>TEST</Button>
+      <Button disabled icon={<Upload />}>
+        TEST
+      </Button>
       <Button icon={<Upload />} variant="contained">
+        TEST
+      </Button>
+      <Button disabled icon={<Upload />} variant="contained">
         TEST
       </Button>
       <Button icon={<Upload />} variant="outlined">
         TEST
       </Button>
-      <Button>TEST</Button>
+      <Button disabled icon={<Upload />} variant="outlined">
+        TEST
+      </Button>
     </div>
   );
 };

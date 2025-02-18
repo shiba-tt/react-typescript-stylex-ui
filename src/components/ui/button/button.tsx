@@ -3,9 +3,13 @@ import * as React from 'react';
 import stylex from '@stylexjs/stylex';
 import { type StyleXStyles } from '@stylexjs/stylex';
 
-import { colors } from '../../../tokens.stylex';
+import { buttonStyles, colors } from '../../../tokens.stylex';
 
 const styles = stylex.create({
+  disabled: {},
+  disabledLabelText: {
+    opacity: 0.38,
+  },
   iconRoot: {
     marginRight: 8,
   },
@@ -34,7 +38,8 @@ const styles = stylex.create({
 const variants = stylex.create({
   contained: {
     backgroundColor: {
-      default: colors.primary,
+      default: colors.primary,
+      ':disabled': buttonStyles.disabledBackground,
       ':hover': 'blue',
       ':active': 'darkblue',
     },
@@ -67,6 +72,7 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 
 const Button = ({
   children,
+  disabled,
   icon,
   style,
   variant = 'text',
@@ -79,11 +85,23 @@ const Button = ({
         styles.root,
         icon ? styles.paddingWithIcon : styles.padding,
         variants[variant],
+        disabled && styles.disabled,
         style,
       )}
     >
-      {icon && <span {...stylex.props(styles.iconRoot)}>{icon}</span>}
-      <span>{children}</span>
+      {icon && (
+        <span
+          {...stylex.props(
+            styles.iconRoot,
+            disabled && styles.disabledLabelText,
+          )}
+        >
+          {icon}
+        </span>
+      )}
+      <span {...stylex.props(disabled && styles.disabledLabelText)}>
+        {children}
+      </span>
     </button>
   );
 };
