@@ -44,6 +44,8 @@ const variantsEnabled = stylex.create({
   },
   outlined: {
     backgroundColor: 'inherit',
+    borderColor: colors.outline,
+    borderWidth: 1,
     color: colors.primary,
   },
   text: {
@@ -58,8 +60,17 @@ const variantsDisabled = stylex.create({
     backgroundColor: null,
     color: colors.disabled,
   },
-  outlined: {},
-  text: {},
+  outlined: {
+    backgroundColor: null,
+    borderColor: colors.outline,
+    borderWidth: 1,
+    color: colors.disabled,
+  },
+  text: {
+    background: null,
+    backgroundColor: null,
+    color: colors.disabled,
+  },
 });
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
