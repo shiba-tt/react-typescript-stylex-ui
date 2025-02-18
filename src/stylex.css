@@ -6,10 +6,9 @@ body {
   font-family: 'Noto Sans JP', sans-serif;
 }
 
-button {
-  font-family: inherit;
-}
-
 .lucide {
+  height: 18px;
+  stroke-width: 2.5;
   vertical-align: middle;
+  width: 18px;
 }

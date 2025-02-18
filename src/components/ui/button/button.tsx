@@ -10,21 +10,23 @@ const styles = stylex.create({
     marginRight: 8,
   },
   padding: {
-    paddingBlock: '0px',
-    paddingInline: '24px',
+    paddingBlock: 0,
+    paddingInline: 24,
   },
   paddingWithIcon: {
-    paddingBottom: '0px',
-    paddingLeft: '16px',
-    paddingRight: '24px',
-    paddingTop: '0px',
+    paddingBottom: 0,
+    paddingLeft: 16,
+    paddingRight: 24,
+    paddingTop: 0,
   },
   root: {
     alignItems: 'center',
     borderRadius: 20,
     borderWidth: 0,
     display: 'inline-flex',
-    fontSize: '1rem',
+    fontFamily: 'inherit',
+    fontSize: 14,
+    fontWeight: 500,
     height: 40,
   },
 });
@@ -32,11 +34,11 @@ const styles = stylex.create({
 const variants = stylex.create({
   contained: {
     backgroundColor: {
-      default: 'inherit',
+      default: colors.primary,
       ':hover': 'blue',
       ':active': 'darkblue',
     },
-    color: colors.primary,
+    color: colors.onPrimary,
   },
   outlined: {
     backgroundColor: {
