@@ -34,14 +34,10 @@ const styles = stylex.create({
   },
 });
 
-const variants = stylex.create({
+const variantsEnabled = stylex.create({
   contained: {
-    background: {
-      ':disabled': buttonStyles.disabledBackground,
-    },
     backgroundColor: {
       default: colors.primary,
-      ':disabled': null,
       ':hover': 'blue',
       ':active': 'darkblue',
     },
@@ -65,11 +61,21 @@ const variants = stylex.create({
   },
 });
 
+const variantsDisabled = stylex.create({
+  contained: {
+    background: buttonStyles.disabledBackground,
+    backgroundColor: null,
+    color: colors.onPrimary,
+  },
+  outlined: {},
+  text: {},
+});
+
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   icon?: React.ReactNode;
   ref?: React.Ref<HTMLButtonElement>;
   style?: StyleXStyles & StyleXStyles[] & string;
-  variant?: keyof typeof variants;
+  variant?: 'contained' | 'outlined' | 'text';
 };
 
 const Button = ({
@@ -80,6 +86,8 @@ const Button = ({
   variant = 'text',
   ...props
 }: ButtonProps) => {
+  const variants = disabled ? variantsDisabled : variantsEnabled;
+
   return (
     <button
       {...props}
