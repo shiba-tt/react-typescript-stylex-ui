@@ -6,6 +6,11 @@ import { type StyleXStyles } from '@stylexjs/stylex';
 import { buttonStyles, colors } from '../../../tokens.stylex';
 
 const styles = stylex.create({
+  disabled: {
+    background: buttonStyles.disabledBackground,
+    backgroundColor: null,
+    color: buttonStyles.disabled,
+  },
   disabledLabelText: {
     opacity: 0.38,
   },
@@ -37,38 +42,40 @@ const styles = stylex.create({
   },
 });
 
-const variantsEnabled = stylex.create({
-  contained: {
+const colorVariants = stylex.create({
+  error: {
+    backgroundColor: colors.error,
+    color: colors.onError,
+  },
+  primary: {
     backgroundColor: colors.primary,
     color: colors.onPrimary,
   },
-});
-
-const variantsDisabled = stylex.create({
-  contained: {
-    background: buttonStyles.disabledBackground,
-    backgroundColor: null,
-    color: buttonStyles.disabled,
+  secondary: {
+    backgroundColor: colors.secondary,
+    color: colors.onSecondary,
+  },
+  tertiary: {
+    backgroundColor: colors.tertiary,
+    color: colors.onTertiary,
   },
 });
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  color?: keyof typeof colorVariants;
   icon?: React.ReactNode;
   ref?: React.Ref<HTMLButtonElement>;
   style?: StyleXStyles & StyleXStyles[] & string;
-  variant?: 'contained';
 };
 
 const Button = ({
+  color = 'primary',
   children,
   disabled,
   icon,
   style,
-  variant = 'contained',
   ...props
 }: ButtonProps) => {
-  const variants = disabled ? variantsDisabled : variantsEnabled;
-
   return (
     <button
       {...props}
@@ -76,7 +83,8 @@ const Button = ({
         styles.root,
         icon ? styles.paddingWithIcon : styles.padding,
         !disabled && styles.pointer,
-        variants[variant],
+        colorVariants[color],
+        disabled && styles.disabled,
         style,
       )}
     >
