@@ -4,6 +4,13 @@ import stylex from '@stylexjs/stylex';
 import { type StyleXStyles } from '@stylexjs/stylex';
 
 const styles = stylex.create({
+  color: {
+    backgroundColor: {
+      default: '#6750A4',
+      ':hover': 'darkblue',
+    },
+    color: 'white',
+  },
   iconRoot: {
     marginRight: 8,
   },
@@ -23,37 +30,26 @@ const styles = stylex.create({
   },
 });
 
-const colorVariants = stylex.create({
-  primary: {
-    backgroundColor: {
-      default: '#6750A4',
-      ':hover': 'darkblue',
-    },
-    color: 'white',
-  },
-  secondary: {
-    backgroundColor: {
-      default: 'gray',
-      ':hover': 'darkgray',
-    },
-    color: 'white',
-  },
+const variants = stylex.create({
+  contained: {},
+  outlined: {},
+  text: {},
 });
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  color?: keyof typeof colorVariants;
   icon?: React.ReactNode;
   isLoading?: boolean;
   ref?: React.Ref<HTMLButtonElement>;
   style?: StyleXStyles & StyleXStyles[] & string;
+  variant?: keyof typeof variants;
 };
 
 const Button = ({
   children,
-  color = 'primary',
   icon,
   isLoading,
   style,
+  variant = 'text',
   ...props
 }: ButtonProps) => {
   return (
@@ -62,7 +58,8 @@ const Button = ({
       {...stylex.props(
         styles.root,
         icon ? styles.paddingWithIcon : styles.padding,
-        colorVariants[color],
+        styles.color,
+        variants[variant],
         style,
       )}
     >
