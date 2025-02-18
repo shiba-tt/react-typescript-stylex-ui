@@ -8,8 +8,8 @@ import { buttonStyles, colors } from '../../../tokens.stylex';
 const styles = stylex.create({
   disabled: {
     background: buttonStyles.disabledBackground,
-    backgroundColor: null,
     color: buttonStyles.disabled,
+    cursor: 'not-allowed',
   },
   disabledLabelText: {
     opacity: 0.38,
@@ -27,13 +27,11 @@ const styles = stylex.create({
     paddingRight: 24,
     paddingTop: 0,
   },
-  pointer: {
-    cursor: 'pointer',
-  },
   root: {
     alignItems: 'center',
     borderRadius: 20,
     borderWidth: 0,
+    cursor: 'pointer',
     display: 'inline-flex',
     fontFamily: 'inherit',
     fontSize: 14,
@@ -82,7 +80,6 @@ const Button = ({
       {...stylex.props(
         styles.root,
         icon ? styles.paddingWithIcon : styles.padding,
-        !disabled && styles.pointer,
         colorVariants[color],
         disabled && styles.disabled,
         style,
