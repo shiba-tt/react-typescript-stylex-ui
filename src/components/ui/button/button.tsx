@@ -6,7 +6,6 @@ import { type StyleXStyles } from '@stylexjs/stylex';
 import { buttonStyles, colors } from '../../../tokens.stylex';
 
 const styles = stylex.create({
-  disabled: {},
   disabledLabelText: {
     opacity: 0.38,
   },
@@ -37,9 +36,12 @@ const styles = stylex.create({
 
 const variants = stylex.create({
   contained: {
-    backgroundColor: {
-      default: colors.primary,
+    background: {
       ':disabled': buttonStyles.disabledBackground,
+    },
+    backgroundColor: {
+      default: colors.primary,
+      ':disabled': null,
       ':hover': 'blue',
       ':active': 'darkblue',
     },
@@ -85,7 +87,6 @@ const Button = ({
         styles.root,
         icon ? styles.paddingWithIcon : styles.padding,
         variants[variant],
-        disabled && styles.disabled,
         style,
       )}
     >

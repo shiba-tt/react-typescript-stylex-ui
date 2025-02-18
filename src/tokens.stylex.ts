@@ -1,7 +1,7 @@
 import stylex from '@stylexjs/stylex';
 
 export const buttonStyles = stylex.defineVars({
-  disabledBackground: 'rgba(29,27,32,0.12)',
+  disabledBackground: 'rgba(29,27,32,0.1)',
 });
 
 export const colors = stylex.defineVars({
