@@ -3,21 +3,7 @@ import * as React from 'react';
 import stylex from '@stylexjs/stylex';
 import { type StyleXStyles } from '@stylexjs/stylex';
 
-// const primaryColor = '#6750A4';
-
-// type colorProp = {
-//   onPrimary: string;
-//   onPrimaryContainer: string;
-//   primary: string;
-//   primaryContainer: string;
-// };
-
-// const color: colorProp = {
-//   onPrimary: '#FFFFFF',
-//   onPrimaryContainer: '#4F378B',
-//   primary: '#6750A4',
-//   primaryContainer: '#EADDFF',
-// };
+import { colors } from '../../../tokens.stylex';
 
 const styles = stylex.create({
   iconRoot: {
@@ -44,15 +30,29 @@ const styles = stylex.create({
 });
 
 const variants = stylex.create({
-  contained: {},
-  outlined: {},
+  contained: {
+    backgroundColor: {
+      default: 'inherit',
+      ':hover': 'blue',
+      ':active': 'darkblue',
+    },
+    color: colors.primary,
+  },
+  outlined: {
+    backgroundColor: {
+      default: 'inherit',
+      ':hover': 'blue',
+      ':active': 'darkblue',
+    },
+    color: colors.primary,
+  },
   text: {
     backgroundColor: {
       default: 'inherit',
       ':hover': 'blue',
       ':active': 'darkblue',
     },
-    color: '#4F378B',
+    color: colors.primary,
   },
 });
 
