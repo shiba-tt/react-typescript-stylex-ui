@@ -39,21 +39,15 @@ const styles = stylex.create({
 
 const variantsEnabled = stylex.create({
   contained: {
-    backgroundColor: {
-      default: colors.primary,
-    },
+    backgroundColor: colors.primary,
     color: colors.onPrimary,
   },
   outlined: {
-    backgroundColor: {
-      default: 'inherit',
-    },
+    backgroundColor: 'inherit',
     color: colors.primary,
   },
   text: {
-    backgroundColor: {
-      default: 'inherit',
-    },
+    backgroundColor: 'inherit',
     color: colors.primary,
   },
 });
