@@ -58,7 +58,6 @@ const variants = stylex.create({
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   icon?: React.ReactNode;
-  isLoading?: boolean;
   ref?: React.Ref<HTMLButtonElement>;
   style?: StyleXStyles & StyleXStyles[] & string;
   variant?: keyof typeof variants;
@@ -67,7 +66,6 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 const Button = ({
   children,
   icon,
-  isLoading,
   style,
   variant = 'text',
   ...props
@@ -82,9 +80,7 @@ const Button = ({
         style,
       )}
     >
-      {!isLoading && icon && (
-        <span {...stylex.props(styles.iconRoot)}>{icon}</span>
-      )}
+      {icon && <span {...stylex.props(styles.iconRoot)}>{icon}</span>}
       <span>{children}</span>
     </button>
   );
