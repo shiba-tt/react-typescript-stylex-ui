@@ -38,24 +38,18 @@ const variantsEnabled = stylex.create({
   contained: {
     backgroundColor: {
       default: colors.primary,
-      ':hover': 'blue',
-      ':active': 'darkblue',
     },
     color: colors.onPrimary,
   },
   outlined: {
     backgroundColor: {
       default: 'inherit',
-      ':hover': 'blue',
-      ':active': 'darkblue',
     },
     color: colors.primary,
   },
   text: {
     backgroundColor: {
       default: 'inherit',
-      ':hover': 'blue',
-      ':active': 'darkblue',
     },
     color: colors.primary,
   },
