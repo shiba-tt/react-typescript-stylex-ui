@@ -1,12 +1,12 @@
 <div id="top"></div>
 
-# React Vite TypeScript Template
+# React TypeScript StyleX UI
 
 ## プロジェクト概要
 
-React、Vite、TypeScriptを使用したプロジェクトテンプレートの作成\
-Viteは高速なビルドツールとして知られており、開発効率を向上させるため今回採用\
-(バイトと呼んでいたが正しくはヴィートでした......)
+React、TypeScript、StyleXを使用してUIを作成\
+ビルドツール:Vite\
+ユニットテストフレームワーク:Vitest\
 
 ## 前提条件
 
@@ -21,8 +21,8 @@ Viteは高速なビルドツールとして知られており、開発効率を�
 ## 実行環境のセットアップ
 
 ```bash
-git clone https://github.com/shiba-tt/react-vite-test.git
-cd react-vite-test
+git clone https://github.com/shiba-tt/react-typescript-stylex-ui.git
+cd react-typescript-stylex-ui
 npm install
 ```
 
@@ -38,4 +38,4 @@ http://localhost:6006/
 
 ##### `npm run test`
 
-テストを実行します。(今回Vitestを使用)
+テストを実行します。
