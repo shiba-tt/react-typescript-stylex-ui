@@ -22,6 +22,9 @@ const styles = stylex.create({
     paddingRight: 24,
     paddingTop: 0,
   },
+  pointer: {
+    cursor: 'pointer',
+  },
   root: {
     alignItems: 'center',
     borderRadius: 20,
@@ -88,6 +91,7 @@ const Button = ({
       {...stylex.props(
         styles.root,
         icon ? styles.paddingWithIcon : styles.padding,
+        !disabled && styles.pointer,
         variants[variant],
         style,
       )}
