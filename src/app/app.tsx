@@ -12,21 +12,9 @@ const styles = stylex.create({
 const App = () => {
   return (
     <div {...stylex.props(styles.root)}>
-      <Button icon={<Upload />}>Text</Button>
+      <Button icon={<Upload />}>Contained</Button>
       <Button disabled icon={<Upload />}>
-        Disabled Text
-      </Button>
-      <Button icon={<Upload />} variant="contained">
-        Contained
-      </Button>
-      <Button disabled icon={<Upload />} variant="contained">
         Disabled Contained
-      </Button>
-      <Button icon={<Upload />} variant="outlined">
-        Outlined
-      </Button>
-      <Button disabled icon={<Upload />} variant="outlined">
-        Disabled Outlined
       </Button>
     </div>
   );
