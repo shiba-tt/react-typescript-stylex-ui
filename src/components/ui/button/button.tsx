@@ -3,22 +3,35 @@ import * as React from 'react';
 import stylex from '@stylexjs/stylex';
 import { type StyleXStyles } from '@stylexjs/stylex';
 
+// const primaryColor = '#6750A4';
+
+// type colorProp = {
+//   onPrimary: string;
+//   onPrimaryContainer: string;
+//   primary: string;
+//   primaryContainer: string;
+// };
+
+// const color: colorProp = {
+//   onPrimary: '#FFFFFF',
+//   onPrimaryContainer: '#4F378B',
+//   primary: '#6750A4',
+//   primaryContainer: '#EADDFF',
+// };
+
 const styles = stylex.create({
-  color: {
-    backgroundColor: {
-      default: '#6750A4',
-      ':hover': 'darkblue',
-    },
-    color: 'white',
-  },
   iconRoot: {
     marginRight: 8,
   },
   padding: {
-    padding: '0px 24px',
+    paddingBlock: '0px',
+    paddingInline: '24px',
   },
   paddingWithIcon: {
-    padding: '0px 24px 0px 16px',
+    paddingBottom: '0px',
+    paddingLeft: '16px',
+    paddingRight: '24px',
+    paddingTop: '0px',
   },
   root: {
     alignItems: 'center',
@@ -33,7 +46,14 @@ const styles = stylex.create({
 const variants = stylex.create({
   contained: {},
   outlined: {},
-  text: {},
+  text: {
+    backgroundColor: {
+      default: 'inherit',
+      ':hover': 'blue',
+      ':active': 'darkblue',
+    },
+    color: '#4F378B',
+  },
 });
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -58,7 +78,6 @@ const Button = ({
       {...stylex.props(
         styles.root,
         icon ? styles.paddingWithIcon : styles.padding,
-        styles.color,
         variants[variant],
         style,
       )}
